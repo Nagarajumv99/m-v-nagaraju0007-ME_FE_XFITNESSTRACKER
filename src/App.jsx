@@ -102,6 +102,7 @@ function App() {
       {/* Recent Health Statistics */}
       <div className="transactionsWrapper">
         <div className="habitListWrapper">
+          <h2>Recent Health Statistics</h2>
           {filteredData && filteredData.length > 0 ? (<DataList data={filteredData} onEdit={handleEdit} onDelete={handleDelete} />) : <p className="empty-state">No data available for this date.</p>}
           
         </div>

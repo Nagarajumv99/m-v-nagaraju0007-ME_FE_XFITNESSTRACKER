@@ -2,7 +2,20 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 
 function WeeklyTrends({ data }) {
   if (!data.length) return null;
-  const lastWeekData = data.slice(-7);
+
+  const datedData = data
+    .filter((item) => item.date)
+    .sort((first, second) => first.date.localeCompare(second.date));
+  const latestDay = new Date();
+  latestDay.setHours(0, 0, 0, 0);
+  const firstDay = new Date(latestDay);
+  firstDay.setDate(firstDay.getDate() - 6);
+  const lastWeekData = datedData.filter((item) => {
+    const itemDate = new Date(`${item.date}T00:00:00`);
+    return itemDate >= firstDay && itemDate <= latestDay;
+  });
+
+  if (!lastWeekData.length) return null;
 
   return (
     <div className="chart-card">

@@ -105,7 +105,7 @@ background-color: #4caf50;
   gap: 32px;
 }
 
-.habitListWrapper > div > h2,
+.habitListWrapper > h2,
 .recharts-responsive-container h2,
 .charts-container h2 {
     color: white;
@@ -344,6 +344,28 @@ button[type="submit"]:hover,
   .cardWrapper,
   .transactionsWrapper,
   .summary-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cardInner {
+    grid-template-columns: 1fr 40px 40px;
+  }
+
+  .transactionsWrapper {
+    gap: 24px;
+  }
+
+  .habitListWrapper > h2,
+  .recharts-responsive-container h2,
+  .charts-container h2 {
+    font-size: 1.35rem;
+  }
+
+  .list {
+    padding: 16px;
+  }
+
+  .list > div {
     grid-template-columns: 1fr;
   }
 

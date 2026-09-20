@@ -3,7 +3,6 @@ import { FaPencilAlt, FaTimes } from "react-icons/fa";
 function DataList({ data, onEdit, onDelete }) {
   return (
     <div>
-      <h2>Recent Health Statistics</h2>
       <div className="list">
         {data.map((item, index) => (
           <div key={index}>
